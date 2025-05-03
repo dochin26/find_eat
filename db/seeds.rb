@@ -11,7 +11,7 @@
 puts 'start create foods ...'
 
 foods = [ "ramen", "curryrice", "teisyoku" ]
-commnents = [ "寒い日に食べたい", "みんな大好き", "出汁が効いてます" ]
+comments = [ "寒い日に食べたい", "みんな大好き", "出汁が効いてます" ]
 names = [ "ラーメン", "カレーライス", "焼き魚定食" ]
 
 foods.length.times do |i|
