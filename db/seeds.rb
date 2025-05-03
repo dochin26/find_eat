@@ -10,9 +10,9 @@
 
 puts 'start create foods ...'
 
-foods = ["ramen", "curryrice", "teisyoku"]
-commnents = ["寒い日に食べたい", "みんな大好き", "出汁が効いてます"]
-names = ["ラーメン", "カレーライス", "焼き魚定食"] 
+foods = [ "ramen", "curryrice", "teisyoku" ]
+commnents = [ "寒い日に食べたい", "みんな大好き", "出汁が効いてます" ]
+names = [ "ラーメン", "カレーライス", "焼き魚定食" ]
 
 foods.length.times do |i|
   Food.create!(
@@ -20,8 +20,8 @@ foods.length.times do |i|
     comment: comments[i],
     food_image: foods[i],
     created_at: Time.current,
-    updated_at: Time.current 
+    updated_at: Time.current
   )
-end 
+end
 
 puts 'finish create foods ...'
