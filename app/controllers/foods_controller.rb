@@ -1,8 +1,7 @@
 class FoodsController < ApplicationController
-    before_action :set_food, only: [:show]
+    before_action :set_food, only: [ :show ]
 
     def show
-        @food = Food.order("RANDOM()").first
     end
 
     private
