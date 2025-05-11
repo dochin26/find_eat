@@ -1,12 +1,13 @@
 class FoodsController < ApplicationController
-    before_action :set_food, only: [ :show ]
-
-    def show
+    def create
+        @result = Result.new(slug: SecureRandom.alphanumeric(12))
+        @result.food_id = Food.order("RANDOM()").first.id
+        @result.save
+        redirect_to result_path(@result.slug)
     end
 
-    private
-
-    def set_food
-        @food = Food.order("RANDOM()").first
+    def show
+        @result = Result.find_by(slug: params[:id])
+        @food = Food.find(@result.food_id)
     end
 end
