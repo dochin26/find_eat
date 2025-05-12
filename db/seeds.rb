@@ -10,7 +10,7 @@
 
 puts 'start create foods ...'
 
-foods = [ 
+foods = [
   "ramen", "sushi", "curryrice", "hamburg", "udon",
   "yakisoba", "gyoza", "tendon", "omurice", "karaage",
   "katsudon", "mabodofu", "oyakodon", "napolitan", "bibimbap",
@@ -19,8 +19,8 @@ foods = [
   "hiyashichuka", "sandwich", "soba", "motsunabe", "doria"
 ]
 
-comments = [ 
-  "こってりスープに絡むもちもち麺！\r\n今日はがっつりラーメンで決まり！", 
+comments = [
+  "こってりスープに絡むもちもち麺！\r\n今日はがっつりラーメンで決まり！",
   "新鮮なネタが口の中でとろける。\r\nちょっと贅沢な気分の時にぴったり！",
   "スパイスの香りに食欲爆発！\r\nごはんが止まらない王道の一皿。",
   "ジュワッとあふれる肉汁！\r\n濃厚デミグラスソースでご飯が進む！",
@@ -52,7 +52,7 @@ comments = [
   "香ばしく焼けたチーズの下から、\r\nとろとろソースとご飯が登場！"
 ]
 
-names = [ 
+names = [
   "ラーメン", "寿司", "カレーライス", "ハンバーグ", "うどん",
   "焼きそば", "餃子", "天丼", "オムライス", "唐揚げ",
   "カツ丼", "麻婆豆腐", "親子丼", "ナポリタン", "ビビンバ",
