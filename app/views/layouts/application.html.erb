@@ -3,7 +3,7 @@
   <head>
     <title><%= content_for(:title) || "Myapp" %></title>
     <% if @food.present? %>
-      <meta property="og:image" content="<%= image_url("foods/#{@food.food_image}.png") %>">
+      <meta property="og:image" content="<%= "#{request.base_url}#{asset_path("foods/#{@food.food_image}.png")}" %>">
       <meta property="og:title" content="今日は<%= @food.name %>にしようかな！">
       <meta property="og:description" content="食事ルーレットで今日のご飯を決めよう！">
     <% end %>
