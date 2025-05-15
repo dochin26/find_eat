@@ -62,3 +62,5 @@ gem "tailwindcss-ruby", "3.4.17"
 gem "rubocop"
 
 gem "pry-rails"
+
+gem 'meta-tags', require: 'meta_tags'
