@@ -9,5 +9,28 @@ class FoodsController < ApplicationController
     def show
         @result = Result.find_by(slug: params[:id])
         @food = Food.find(@result.food_id)
+
+        prepare_meta_tags(@food)
     end
+
+    private
+
+    def prepare_meta_tags(food)
+## このimage_urlにMiniMagickで設定したOGPの生成した合成画像を代入する
+    image_url = "#{request.base_url}#{view_context.asset_path("foods/#{food.food_image}.png")}"
+    set_meta_tags og: {
+                    site_name: 'メシタベ！',
+                    title: food.name,
+                    description: food.comment,
+                    type: 'website',
+                    url: request.original_url,
+                    image: image_url,
+                    locale: 'ja-JP'
+                  },
+                  twitter: {
+                    card: 'summary_large_image',
+                    site: '@https://x.com/dochin26',
+                    image: image_url
+                  }
+  end
 end
