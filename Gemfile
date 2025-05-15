@@ -63,4 +63,4 @@ gem "rubocop"
 
 gem "pry-rails"
 
-gem 'meta-tags', require: 'meta_tags'
+gem "meta-tags", require: "meta_tags"
