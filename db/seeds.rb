@@ -16,7 +16,8 @@ foods = [
   "katsudon", "mabodofu", "oyakodon", "napolitan", "bibimbap",
   "tonkatsu", "chickennanban", "gratin", "pizza", "shogayaki",
   "kaisendon", "steak", "friedrice", "yakiniku", "tacorice",
-  "hiyashichuka", "sandwich", "soba", "motsunabe", "doria"
+  "hiyashichuka", "sandwich", "soba", "motsunabe", "doria",
+  "jiro", "uradaiki"
 ]
 
 comments = [
@@ -49,7 +50,9 @@ comments = [
   "ふわふわパンに具だくさん！\r\n忙しい朝にもぴったりの一品。",
   "つるりとしたのど越しと\r\nキリッとしたつゆで、さっぱりお昼に。",
   "コトコト煮込んだ旨味がしみしみ。\r\n白ご飯にもお酒にも合う！",
-  "香ばしく焼けたチーズの下から、\r\nとろとろソースとご飯が登場！"
+  "香ばしく焼けたチーズの下から、\r\nとろとろソースとご飯が登場！",
+  "ガッツリしたいそこのアナタ！\r\n合言葉はもちろん、全マシマシ🧄🧄",
+  "豚骨と醤油のアクセントが最高！\r\n海苔とご飯も一緒にどうぞ。"
 ]
 
 names = [
@@ -58,7 +61,8 @@ names = [
   "カツ丼", "麻婆豆腐", "親子丼", "ナポリタン", "ビビンバ",
   "とんかつ", "チキン南蛮", "グラタン", "ピザ", "生姜焼き",
   "海鮮丼", "ステーキ", "チャーハン", "焼肉", "タコライス",
-  "冷やし中華", "サンドイッチ", "そば", "もつ鍋", "ドリア"
+  "冷やし中華", "サンドイッチ", "そば", "もつ鍋", "ドリア",
+  "ラーメン二郎", "家系ラーメン"
 ]
 
 foods.length.times do |i|
