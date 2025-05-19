@@ -8,9 +8,13 @@ class FoodsController < ApplicationController
 
     def show
         @result = Result.find_by(slug: params[:id])
-        @food = Food.find(@result.food_id)
-
-        prepare_meta_tags(@food)
+        if @result.nil?
+          flash[:alert] = "そのメニューは存在しません"
+          redirect_to root_path
+        else
+          @food = Food.find(@result.food_id)
+          prepare_meta_tags(@food)
+        end
     end
 
     private
