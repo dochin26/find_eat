@@ -5,7 +5,7 @@ class FoodsController < ApplicationController
         @result.save
         redirect_to loading_path(@result.slug)
     end
-    
+
     def loading
         @result = Result.find_by(slug: params[:id])
         if @result.nil?
