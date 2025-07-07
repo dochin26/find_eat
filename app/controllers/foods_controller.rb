@@ -3,7 +3,13 @@ class FoodsController < ApplicationController
         @result = Result.new(slug: SecureRandom.alphanumeric(12))
         @result.food_id = Food.order("RANDOM()").first.id
         @result.save
-        redirect_to loading_path(@result.slug)
+        
+        # ご飯変更からの遷移かどうかをパラメータで判定
+        if params[:source] == "change"
+            redirect_to loading_path(@result.slug, source: "change")
+        else
+            redirect_to loading_path(@result.slug)
+        end
     end
 
     def loading

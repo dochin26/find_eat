@@ -23,10 +23,20 @@
 </div>
 
 <script>
-  // 3秒後に結果画面へリダイレクト
+  // URLパラメータをチェックして時間を決定
+  const urlParams = new URLSearchParams(window.location.search);
+  const source = urlParams.get('source');
+  let loadingTime = 3000; // デフォルト3秒
+  
+  // ご飯変更からの遷移の場合は1.5秒
+  if (source === 'change') {
+    loadingTime = 1000;
+  }
+  
+  // 指定時間後に結果画面へリダイレクト
   setTimeout(function() {
     window.location.href = '<%= result_path(@result.slug) %>';
-  }, 3000);
+  }, loadingTime);
 </script>
 
 <style>

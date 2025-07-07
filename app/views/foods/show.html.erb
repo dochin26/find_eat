@@ -15,7 +15,8 @@
           近隣店舗を探す
         </button>
 
-        <%= form_with url: results_path, method: :post, class: "w-full" do %>
+        <%= form_with url: results_path, method: :post, class: "w-full", local: true do %>
+          <%= hidden_field_tag :source, "change" %>
           <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg font-medium px-6 rounded-full transition duration-300"
                   style="padding-top: 20px; padding-bottom: 20px;">
             ご飯変更
