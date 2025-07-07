@@ -37,7 +37,7 @@ class FoodsController < ApplicationController
     ## このimage_urlにMiniMagickで設定したOGPの生成した合成画像を代入する
     image_url = "#{request.base_url}#{view_context.asset_path("foods/#{food.food_image}.png")}"
     set_meta_tags og: {
-                    site_name: "メシタベ！",
+                    site_name: "！",
                     title: "今日は#{food.name}にしようかな！",
                     description: "食事ルーレットで今日のご飯を決めよう！",
                     type: "website",
