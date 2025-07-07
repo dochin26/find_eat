@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "foods#index"
   post "/results", to: "foods#create"
+  get "/loading/:id", to: "foods#loading", as: "loading"
   get "/:id", to: "foods#show", as: "result"
 end
