@@ -7,24 +7,32 @@
 
     <%= simple_format(@food.comment, class: "text-2xl font-extrabold text-gray-800 mb-8 tracking-wide") %>
     <br><br>
-    <div>
-      <%= button_to 'トップ', root_path, method: :get, class: "inline-block bg-orange-600 hover:bg-orange-700 text-white text-base sm:text-lg font-medium py-3 px-6 sm:px-8 rounded-full transition duration-300" %>
-      <br>
-      <%= form_with url: results_path, method: :post, class: "inline-block mr-4" do %>
-        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg font-medium py-3 px-6 sm:px-8 rounded-full transition duration-300">
-        ご飯変更
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div class="grid grid-cols-1 sm:grid-cols-2" style="gap: 20px;">
+        <button onclick="MapService.searchNearbyRestaurants('<%= @food.name %>')" 
+                class="w-full bg-purple-600 hover:bg-purple-700 text-white text-base sm:text-lg font-medium px-6 rounded-full transition duration-300 mb-4 sm:mb-0"
+                style="padding-top: 20px; padding-bottom: 20px;">
+          近隣店舗を探す
         </button>
-      <% end %>
 
-      <%= link_to "Xに投稿", 
-  "https://x.com/intent/tweet?text=今日は#{@food.name} にしようかな！%0A%23メシタベ%0A&url=https://find-eat-f0bl.onrender.com/#{@result.slug}", 
-  class: "inline-block bg-blue-600 hover:bg-blue-700 text-white text-base sm:text-lg font-medium py-3 px-6 sm:px-8 rounded-full transition duration-300", 
-  target: "_blank", rel: "noopener" %>
+        <%= form_with url: results_path, method: :post, class: "w-full" do %>
+          <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg font-medium px-6 rounded-full transition duration-300"
+                  style="padding-top: 20px; padding-bottom: 20px;">
+            ご飯変更
+          </button>
+        <% end %>
+      </div>
       
-      <button onclick="MapService.searchNearbyRestaurants('<%= @food.name %>')" 
-              class="inline-block bg-purple-600 hover:bg-purple-700 text-white text-base sm:text-lg font-medium py-3 px-6 sm:px-8 rounded-full transition duration-300 mt-4">
-        近隣店舗を探す
-      </button>
+      <div class="grid grid-cols-1 sm:grid-cols-2" style="gap: 20px;">
+        <%= link_to "Xに投稿", 
+    "https://x.com/intent/tweet?text=今日は#{@food.name} にしようかな！%0A%23メシタベ%0A&url=https://find-eat-f0bl.onrender.com/#{@result.slug}", 
+    class: "w-full block text-center bg-blue-600 hover:bg-blue-700 text-white text-base sm:text-lg font-medium px-6 rounded-full transition duration-300", 
+    style: "padding-top: 20px; padding-bottom: 20px;",
+    target: "_blank", rel: "noopener" %>
+        
+        <%= link_to 'トップ', root_path, class: "w-full block text-center bg-orange-600 hover:bg-orange-700 text-white text-base sm:text-lg font-medium px-6 rounded-full transition duration-300",
+            style: "padding-top: 20px; padding-bottom: 20px;" %>
+      </div>
     </div>
     <% else %>
       <h2>食事情報が見つかりません</h2>
