@@ -3,7 +3,15 @@ class FoodsController < ApplicationController
         @result = Result.new(slug: SecureRandom.alphanumeric(12))
         @result.food_id = Food.order("RANDOM()").first.id
         @result.save
-        redirect_to result_path(@result.slug)
+        redirect_to loading_path(@result.slug)
+    end
+    
+    def loading
+        @result = Result.find_by(slug: params[:id])
+        if @result.nil?
+          flash[:alert] = "そのメニューは存在しません"
+          redirect_to root_path
+        end
     end
 
     def show
