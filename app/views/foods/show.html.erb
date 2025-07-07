@@ -20,6 +20,11 @@
   "https://x.com/intent/tweet?text=今日は#{@food.name} にしようかな！%0A%23メシタベ%0A&url=https://find-eat-f0bl.onrender.com/#{@result.slug}", 
   class: "inline-block bg-blue-600 hover:bg-blue-700 text-white text-base sm:text-lg font-medium py-3 px-6 sm:px-8 rounded-full transition duration-300", 
   target: "_blank", rel: "noopener" %>
+      
+      <button onclick="MapService.searchNearbyRestaurants('<%= @food.name %>')" 
+              class="inline-block bg-purple-600 hover:bg-purple-700 text-white text-base sm:text-lg font-medium py-3 px-6 sm:px-8 rounded-full transition duration-300 mt-4">
+        近隣店舗を探す
+      </button>
     </div>
     <% else %>
       <h2>食事情報が見つかりません</h2>
